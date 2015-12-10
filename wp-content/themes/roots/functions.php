@@ -84,4 +84,14 @@ function roots_author_link($link) {
 
 add_filter('the_author_posts_link', 'roots_author_link');
 
+
+function theme_name_scripts() {
+	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/css/style.css' );
+	wp_enqueue_style( 'vnelson', get_stylesheet_directory_uri() . '/css/vnelson.css' );
+
+	// wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
+
 ?>
